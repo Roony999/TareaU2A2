@@ -1,0 +1,74 @@
+﻿@model TareaU2A2.Models.ViewModels.Raza
+@{
+    Layout = "Layout";
+}
+
+<main class="main">
+    <h2 id="nombre">@Model.Name</h2>
+
+    <section class="descripcion" id="descripcion">
+        @Model.Description
+    </section>
+
+    <section class="galeria">
+        <img id="fotoPerro" src="~/imgs_perros/@(Model.Id)_0.jpg" />
+    </section>
+
+    <section class="datos">
+        <h3>Datos</h3>
+        <label>Otros nombres: </label>
+        <span id="otrosNombre">@Model.OtroNombre</span>
+        <br />
+        <label>País de Origen: </label>
+        <span id="pais">@Model.NomPais</span>
+        <br />
+        <label>Peso: </label>
+        <span id="peso">@Model.PesoMin - @Model.PesoMax</span>
+        <br />
+        <label>Altura: </label>
+        <span id="altura">@Model.AlturaMin - @Model.AlturaMax</span>
+        <br />
+        <label>Esperanza de Vida: </label>
+        <span id="vida">@Model.Esperanza</span>
+        <br />
+    </section>
+    <section class="estadisticas">
+        <h3>Estadísticas</h3>
+        <label>Nivel de Energía:</label><img src="~/imgs/nivel@(Model.Energia).png" /><br />
+        <label>Facilidad de Entrenamiento:</label><img src="~/imgs/nivel@(Model.Entrenamiento).png" /><br />
+        <label>Ejercicio Obligatorio:</label><img src="~/imgs/nivel@(Model.EjercicioObligatorio).png" /><br />
+        <label>Amistad con Desconocidos:</label><img src="~/imgs/nivel@(Model.AmistaddDesconocida).png" /><br />
+        <label>Amistad con Perros:</label><img src="~/imgs/nivel@(Model.AmistadPerro).png" /><br />
+        <label>Necesidad de Cepillado:</label><img src="~/imgs/nivel@(Model.Cepillado).png" />
+    </section>
+    <section class="fisicas">
+        <h3>Caracteristicas Físicas</h3>
+        <label>Patas: </label>
+        <span id="patas">@Model.Patas</span>
+        <br />
+        <label>Cola: </label>
+        <span id="cola"> @Model.cola</span>
+        <br />
+        <label>Hocico: </label>
+        <span id="hocico"> @Model.Hocico</span>
+        <br />
+        <label>Pelo: </label>
+        <span id="pelo"> @Model.Pelo</span>
+        <br />
+        <label>Color: </label>
+        <span id="color">@Model.Color</span>
+    </section>
+    <br class="clear" />
+
+    <a href="javascript:history.back();" class="button">Regresar</a>
+
+
+    <section class="otrosPerros">
+       
+        <a href="~/Home/raza">
+            <img src="~/imgs_perros/@(Model.Id)_0.jpg" />
+            <h2>@Model.Name</h2>
+        </a>
+    </section>
+</main>
+

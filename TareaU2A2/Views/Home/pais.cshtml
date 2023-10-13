@@ -1,0 +1,34 @@
+﻿@model TareaU2A2.Models.ViewModels.paisViewM
+@{
+    Layout = "Layout";
+}
+
+
+    <section class="nav">
+        <h3>Razas por país</h3>
+        <nav>
+            <a href="~/Home/index">Listado Alfabético de Razas</a>
+        </nav>
+    </section>
+
+    <section class="list">
+       @foreach(var clase in Model.Paisesbr)
+       {
+        
+        <h4>@clase.Nombre</h4>
+        <ul>
+            @foreach(var clase1 in clase.perros)
+            {
+            <li>
+                <a href="~/raza">
+                    <img src="~/imgs_perros/@(clase1.Id)_0.jpg" />
+                    @clase1.Nombre
+                </a>
+            </li>
+            }
+        </ul>
+        
+       }
+    </section>
+
+

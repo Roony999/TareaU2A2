@@ -1,0 +1,37 @@
+﻿@model TareaU2A2.Models.ViewModels.indexviewM
+@{
+    Layout = "Layout";
+}
+
+        <section class="nav">
+
+          
+            <h3>ABC de Razas</h3>
+            <nav>
+             <a href="~/">Todas</a>
+             @for (char c = 'a'; c <= 'z'; c++)
+            {
+            <a href="~/?c=@c">@c</a>
+            }
+         <a href="~/pais">Listado por país</a>
+            </nav>
+         
+        </section>
+        <section class="list">
+         
+            @foreach(var clase in Model.muchosperros)
+            {
+            
+        
+            <ul>
+                <li>
+                    <a href="~/raza/@clase.Nombre.Replace(" ","-")">
+                        <img src="~/imgs_perros/@(clase.id)_0.jpg">
+                        @clase.Nombre
+                    </a>
+                </li>
+                </ul>
+            }
+        </section>
+    
+
